@@ -33,9 +33,7 @@ public class JwtService {
         }
     }
 
-    public Long extractId(String token) {
-        return decode(token).getClaim("id").asLong();
-    }
+    public Long extractId(String token) { return decode(token).getClaim("id").asLong(); }
 
     public List<String> extractRoles(String token) {
         return decode(token).getClaim("roles").asList(String.class);
@@ -44,4 +42,6 @@ public class JwtService {
     public String extractSubject(String token) {
         return decode(token).getSubject();
     }
+
+    public String extractName(String token) { return decode(token).getClaim("name").asString(); }
 }

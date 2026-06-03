@@ -54,11 +54,13 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
             String email = jwtService.extractSubject(token);
             List<String> roles = jwtService.extractRoles(token);
             Long id = jwtService.extractId(token);
+            String name = jwtService.extractName(token);
 
             ServerHttpRequest modifiedRequest = request.mutate()
                     .header("X-User-Email", email)
                     .header("X-User-Roles", String.join(",", roles))
                     .header("X-User-Id", String.valueOf(id))
+                    .header("X-User-Name", name)
                     .build();
 
             return chain.filter(exchange.mutate().request(modifiedRequest).build());
