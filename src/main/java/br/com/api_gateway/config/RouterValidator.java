@@ -11,7 +11,8 @@ public class RouterValidator {
 
     public static final List<String> openApiEndpoints = List.of(
             "/identity-ms/v1/auth/",
-            "/identity-ms/v1/barber",
+            "/identity-ms/v1/barber/findAll",
+            "/identity-ms/v1/barber/findById",
             "/booking-ms/v1/bookings/confirm/",
             "/booking-ms/v1/barber/services/list"
     );
