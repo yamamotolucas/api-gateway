@@ -14,7 +14,8 @@ public class RouterValidator {
             "/identity-ms/v1/barber/findAll",
             "/identity-ms/v1/barber/findById",
             "/booking-ms/v1/bookings/confirm/",
-            "/booking-ms/v1/barber/services/list"
+            "/booking-ms/v1/barber/services/list",
+            "/booking-ms/test"
     );
 
     public Predicate<ServerHttpRequest> isSecured =
